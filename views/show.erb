@@ -1,0 +1,18 @@
+<div class="">
+  <h2><%= @students.first_name.capitalize %> of <%= @students.last_name.capitalize %></h2>
+  <p>Aged <%= @students.age %> in House <%= @students.house.name.capitalize %></p>
+
+  <br>
+
+  <a href="/students/<%= @students.id%>/edit">Edit your wizardy details.</a>
+
+</div>
+<br>
+<div class="">
+
+  <form class="" action="/students/<%= @students.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Destroy this wizard and banish them.">
+  </form>
+
+</div>

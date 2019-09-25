@@ -1,0 +1,14 @@
+<div class="">
+  <h1>Welcome to Hogwarts</h1>
+</div>
+
+<ul>
+  <% @students.each do |student| %>
+    <li>
+      <a href="/students/<%= student.id %>">
+        <%= student.format_name %>
+      </a>
+      
+    </li>
+  <% end %>
+</ul>

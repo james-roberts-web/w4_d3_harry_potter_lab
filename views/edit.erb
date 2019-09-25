@@ -1,0 +1,29 @@
+<p>What do you mean you want to change your house, wizard?</p>
+
+<form class="" action="/students/<%= @students.id %>" method="post">
+
+  <input type="hidden" name="_method" value="put">
+
+  <label for="first-name">First Name:</label>
+  <input id="first-name" type="text" name="first_name" value="<%= @students.first_name %>"/>
+
+  <label for="last-name">Last Name:</label>
+  <input id="last-name" type="text" name="last_name"value="<%= @students.last_name %>"/>
+
+  <label for="house_select">Select House:</label>
+  <select name="house_id" id="house_select">
+    <% @houses.each do |house| %>
+
+    <option value=   "<%= house.id %>"
+      <%= "selected" if @students.house_id == house.id %> >
+      <%= house.name %> </option>
+
+    <%end%>
+  </select>
+
+  <label for="age">Age:</label>
+  <input id="age" type="text" name="age" value="<%= @students.age %>"/>
+
+  <input type="submit" value="Update your details!"/>
+
+</form>
